@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">APPLICATIONWILLWORK</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="linktotermsofservice">
+        <a href="https://docs.google.com/document/d/1FWzOOy6gU3YufG1gvihGDx5WHJanCS2x4rG-Lav1pVY/edit?usp=sharing">Terms of service</a>
+    </string>
+
+    <string name="linktoprivacypolicy">
+        <a href="https://docs.google.com/document/d/1khLIDrBZCMqBKbMxK6fd87mBAOg2kSwn5Z23Oih11Uw/edit?usp=sharing">Privacy Policy</a>
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="home_fragment">Home Fragment</string>
+    <string name="articles_fragment">Articles Fragment</string>
+    <string name="forums_fragment">Forums Fragment</string>
+
+    <string name="description_edittext">Person</string>
+
+
+</resources>
