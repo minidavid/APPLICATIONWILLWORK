@@ -7,10 +7,25 @@ import android.widget.Toast
 import com.example.applicationwillwork.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
+import com.example.applicationwillwork.Models.MessageClass
+
+import com.google.firebase.database.ChildEventListener
+
+import com.google.firebase.database.DataSnapshot
+
+import com.google.firebase.database.DatabaseError
+
+import com.google.firebase.database.DatabaseReference
+
+import com.google.firebase.database.FirebaseDatabase
+
+
 class Login : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private lateinit var database: DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,12 +38,14 @@ class Login : AppCompatActivity() {
         // Switch to registration activity
         binding.btnSignUpLogin.setOnClickListener {
             switchActivityToRegister()
-        }
+         }
 
         // Log in user
         binding.btnLoginLogin.setOnClickListener {
             val email = binding.txtEmailLogin.text.toString()
             val password = binding.txtPasswordLogin.text.toString()
+
+
 
             // Check for empty fields
             if (email.isNotEmpty() && password.isNotEmpty() && isValidEmail(email)) {

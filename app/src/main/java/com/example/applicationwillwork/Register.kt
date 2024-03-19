@@ -3,32 +3,30 @@ package com.example.applicationwillwork
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import com.example.applicationwillwork.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class Register : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var firebaseAuth: FirebaseAuth
-
-
+    private lateinit var database : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().getReference("Users")
 
-        //switch pages
         binding.btnLogin.setOnClickListener{
             val intent = Intent(this, Login::class.java)
             startActivity(intent)
         }
-
 
         binding.btnSignUp.setOnClickListener{
             val firstName = binding.txtFirstName.text.toString()
@@ -37,56 +35,37 @@ class Register : AppCompatActivity() {
             val password = binding.txtPassword.text.toString()
             val confirmPass = binding.txtConfirmPassword.text.toString()
 
-            //check for validity of email password, etc
-            if (email.isNotEmpty() && firstName.isNotEmpty() && password.isNotEmpty() && confirmPass.isNotEmpty())
-            {
-                //if confirm password is the same as main password
-                if (password == confirmPass)
-                {
-                    //add user and password
-                    firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener()
-                    {
+            val age = 0 // You might want to change this to a valid age input field
 
-                        if (it.isSuccessful)
-                        {
-                            val intent = Intent(this,Login::class.java)
-                            startActivity(intent)
+            val nameTogether = "$firstName $lastName"
+            val userName = nameTogether
+
+            val user = User(userName, firstName, lastName, age, email)
+
+            if (email.isNotEmpty() && firstName.isNotEmpty() && password.isNotEmpty() && confirmPass.isNotEmpty()) {
+                if (password == confirmPass) {
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                database.child(firstName).setValue(user).addOnSuccessListener {
+                                    binding.txtFirstName.text.clear()
+                                    binding.txtLastName.text.clear()
+                                    // Other fields to clear if necessary
+                                }
+                                val intent = Intent(this, Login::class.java)
+                                startActivity(intent)
+                            } else {
+                                Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+                            }
                         }
-                        else
-                        {
-                            Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
-                        }
-                    }
-
+                } else {
+                    Toast.makeText(this, "The Passwords do not match", Toast.LENGTH_SHORT).show()
                 }
-                else
-                {
-                    Toast.makeText(this,"The Password is not matching",Toast.LENGTH_SHORT).show()
-                }
-
+            } else {
+                Toast.makeText(this, "Empty Fields exist", Toast.LENGTH_SHORT).show()
             }
-            else
-            {
-                Toast.makeText(this,"Empty Fields exist",Toast.LENGTH_SHORT).show()
-            }
-
-            //if statement
-
         }
-
-    }
-
-    //-----------function to switch to login activity-------------------
-    private fun switchActivityToLogin()
-    {
-        //press login button top left
-        val btnLogin:Button = findViewById(R.id.btnLogin)
-        btnLogin.setOnClickListener{
-            val intent = Intent(this,Login::class.java)
-            startActivity(intent)
-        }
-        //----------------------------------------------------------
-
-
     }
 }
+
+data class User(val userName: String? = null, val firstName: String? = null, val lastName: String? = null, val age: Int = 0, val email: String? = null)

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,12 +45,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Find the button by its ID
-        val btnToProfile: Button = view.findViewById(R.id.btnProfilePictureHome)
+        val btnToProfile: ImageButton = view.findViewById(R.id.btnProfilePictureHome)
 
         // Set OnClickListener for btnToGroupChat
         btnToProfile.setOnClickListener {
             // Start MainActivity
-            val intent = Intent(activity, UserMainProfile::class.java)
+            val intent = Intent(activity, UserProfileEditEmailandPassword::class.java)
             startActivity(intent)
         }
     }

@@ -15,6 +15,12 @@
         android:theme="@style/Theme.APPLICATIONWILLWORK"
         tools:targetApi="31">
         <activity
+            android:name=".UserProfileViewFromOtherUser"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".msg"
             android:exported="false" />
         <activity
@@ -24,7 +30,7 @@
             android:name=".Call"
             android:exported="false" />
         <activity
-            android:name=".UserMainProfile"
+            android:name=".UserProfileEditEmailandPassword"
             android:exported="false" />
         <activity
             android:name=".UserInteract"

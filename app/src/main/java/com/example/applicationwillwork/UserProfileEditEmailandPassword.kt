@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
-class UserMainProfile : AppCompatActivity() {
+class UserProfileEditEmailandPassword : AppCompatActivity() {
 
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var currentUserEmail: String
@@ -16,7 +16,7 @@ class UserMainProfile : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_user_main_profile)
+        setContentView(R.layout.activity_user_profile_edit_email_and_password)
 
         firebaseAuth = FirebaseAuth.getInstance()
 

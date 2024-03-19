@@ -15,5 +15,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "APPLICATIONWILLWORK"
 include(":app")
-include(":adminapp")
-include(":evaluatorapp")

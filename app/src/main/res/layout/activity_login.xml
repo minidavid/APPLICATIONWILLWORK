@@ -19,11 +19,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+
+
+
     <EditText
         android:id="@+id/txtEmailLogin"
         android:layout_width="390dp"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:textColor="@color/black"
+
         android:textSize="32dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
@@ -33,6 +38,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.597" />
+
+
+
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout2"
@@ -53,7 +62,10 @@
         android:textSize="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmailLogin"
-        app:layout_constraintVertical_bias="0.088"
+        android:shadowColor="#FBFBFB"
+        android:shadowDx="0"
+        android:shadowDy="70"
+        android:shadowRadius="2"       app:layout_constraintVertical_bias="0.088"
         tools:layout_editor_absoluteX="5dp" />
 
     <Button
@@ -78,6 +90,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or..."
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toBottomOf="@+id/whiteRectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.012" />
 
     <!-- email,password,forgot password -->
 
