@@ -50,7 +50,7 @@ class HomeFragment : Fragment() {
         // Set OnClickListener for btnToGroupChat
         btnToProfile.setOnClickListener {
             // Start MainActivity
-            val intent = Intent(activity, UserProfileEditEmailandPassword::class.java)
+            val intent = Intent(activity, UserProfile::class.java)
             startActivity(intent)
         }
     }

@@ -120,7 +120,7 @@
     </androidx.cardview.widget.CardView>
 
     <EditText
-        android:id="@+id/textView7"
+        android:id="@+id/txtuserNameProfile"
         android:layout_width="294dp"
         android:layout_height="wrap_content"
         android:text="TextView"
@@ -130,7 +130,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <EditText
-        android:id="@+id/textView9"
+        android:id="@+id/txtBioProfile"
         android:layout_width="294dp"
         android:layout_height="100dp"
         android:layout_marginTop="13dp"
@@ -143,15 +143,31 @@
         app:layout_constraintVertical_bias="0.042" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnShowNameProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="595dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.184"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.47" />
+
+    <Button
+        android:id="@+id/btnNextAfterProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.762"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.47" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnBackUserProfile"
         android:layout_width="43dp"
         android:layout_height="55dp"
         android:background="#0000"
