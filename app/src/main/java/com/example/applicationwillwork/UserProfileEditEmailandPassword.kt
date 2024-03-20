@@ -39,7 +39,7 @@ class UserProfileEditEmailandPassword : AppCompatActivity() {
         // Initialize back button
         val btnBack: ImageButton = findViewById(R.id.btnBack)
         btnBack.setOnClickListener {
-            val intent = Intent(this, UserInteract::class.java)
+            val intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
             finish() // Finish current activity to prevent going back to it when pressing back
         }
