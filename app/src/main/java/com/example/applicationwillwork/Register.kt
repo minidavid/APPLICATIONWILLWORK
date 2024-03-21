@@ -47,15 +47,21 @@ class Register : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                database.child(firstName).setValue(user).addOnSuccessListener {
-                                    binding.txtFirstName.text.clear()
-                                    binding.txtLastName.text.clear()
-                                    // Other fields to clear if necessary
+                                val currentUser = firebaseAuth.currentUser
+                                val uid = currentUser?.uid ?: ""
+                                database.child(uid).setValue(user).addOnCompleteListener { databaseTask ->
+                                    if (databaseTask.isSuccessful) {
+                                        // Other fields to clear if necessary
+                                        val intent = Intent(this, Login::class.java)
+                                        startActivity(intent)
+                                    } else {
+                                        // Handle database error
+                                        Toast.makeText(this, "Database Error: ${databaseTask.exception?.message}", Toast.LENGTH_SHORT).show()
+                                    }
                                 }
-                                val intent = Intent(this, Login::class.java)
-                                startActivity(intent)
                             } else {
-                                Toast.makeText(this, task.exception?.message, Toast.LENGTH_SHORT).show()
+                                // Handle authentication error
+                                Toast.makeText(this, "Authentication Error: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                             }
                         }
                 } else {

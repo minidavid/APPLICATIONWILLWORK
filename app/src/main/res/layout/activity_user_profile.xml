@@ -68,6 +68,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
@@ -120,16 +121,6 @@
     </androidx.cardview.widget.CardView>
 
     <EditText
-        android:id="@+id/txtuserNameProfile"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <EditText
         android:id="@+id/txtBioProfile"
         android:layout_width="294dp"
         android:layout_height="100dp"
@@ -174,6 +165,16 @@
         app:srcCompat="@drawable/baseline_arrow_back_24"
         tools:layout_editor_absoluteX="14dp"
         tools:layout_editor_absoluteY="19dp" />
+
+    <TextView
+        android:id="@+id/txtUserNameProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

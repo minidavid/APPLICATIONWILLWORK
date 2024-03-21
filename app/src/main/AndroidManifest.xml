@@ -15,6 +15,9 @@
         android:theme="@style/Theme.APPLICATIONWILLWORK"
         tools:targetApi="31">
         <activity
+            android:name=".ArticlesMain"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileViewFromOtherUser"
             android:exported="false" />
         <activity
@@ -46,16 +49,10 @@
             android:exported="false" />
         <activity
             android:name=".Home"
-            android:exported="false" />
-
-        <!-->more info changed<!-->
+            android:exported="false" /> <!-- >more info changed<! -->
         <activity
             android:name=".moreInformation"
-            android:exported="false"
-
-            />
-
-
+            android:exported="false" />
         <activity
             android:name=".Login"
             android:exported="true">
