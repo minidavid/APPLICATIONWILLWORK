@@ -48,7 +48,7 @@ class ForumsFragment : Fragment() {
 
         btnToChat.setOnClickListener {
             // Start MainActivity
-            val intent = Intent(activity, msg::class.java)
+            val intent = Intent(activity, PersontoPersonChat::class.java)
             startActivity(intent)
         }
     }

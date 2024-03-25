@@ -15,6 +15,15 @@
         android:theme="@style/Theme.APPLICATIONWILLWORK"
         tools:targetApi="31">
         <activity
+            android:name=".PersontoPersonChat"
+            android:exported="false" />
+        <activity
+            android:name=".PersonalStuff"
+            android:exported="false" />
+        <activity
+            android:name=".ArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ArticlesMain"
             android:exported="false" />
         <activity

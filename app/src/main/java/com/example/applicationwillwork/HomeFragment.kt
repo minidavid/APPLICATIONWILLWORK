@@ -53,6 +53,14 @@ class HomeFragment : Fragment() {
             val intent = Intent(activity, UserProfile::class.java)
             startActivity(intent)
         }
+
+        val btnToJournal: Button = view.findViewById(R.id.btnPersonalStuff)
+
+        btnToJournal.setOnClickListener {
+            // Start MainActivity
+            val intent = Intent(activity, PersonalStuff::class.java)
+            startActivity(intent)
+        }
     }
 
     companion object {

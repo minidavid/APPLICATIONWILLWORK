@@ -10,14 +10,21 @@
     <string name="linktoprivacypolicy">
         <a href="https://docs.google.com/document/d/1khLIDrBZCMqBKbMxK6fd87mBAOg2kSwn5Z23Oih11Uw/edit?usp=sharing">Privacy Policy</a>
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home_fragment">Home Fragment</string>
     <string name="articles_fragment">Articles Fragment</string>
     <string name="forums_fragment">Forums Fragment</string>
-
     <string name="description_edittext">Person</string>
 
+    <string name="article_one">
+        Mental health has emerged as a pressing concern demanding \nattention and recognition on a global scale. The\nreasons for this shift are manifold, rooted in both\nscientific understanding and social awareness.\nIndividual Well-being:\nAt its core, mental health profoundly impacts an individual\'s\noverall well-being.
+    </string>
 
+    <string name="article_two">
+        What Are Mental Health Problems?\nMental health problems encompass\na broad spectrum of conditions that affect a person\'s thoughts,\nemotions, and behaviors. From anxiety\nand depression to schizophrenia and bipolar disorder,\nthese conditions can manifest in myriad ways,\nvarying in severity and duration. They can arise from a combination of genetic, biological, environmental, and psychological factors, and their effects can ripple through every aspect of a person\'s life.\nThe impact of mental health problems is far-reaching,\naffecting individuals, families, communities, and society\nas a whole. These conditions\ncan disrupt relationships, hinder academic and occupational\nachievement, and diminish overall quality of life. Left untreated,\nthey can lead to substance abuse, self-harm,\nand even suicide, highlighting the need for their address.
+    </string>
+    <string name="article_three">
+    In the \n
+    </string>
 </resources>

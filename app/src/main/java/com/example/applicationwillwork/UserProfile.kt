@@ -20,6 +20,13 @@ class UserProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUserProfileBinding.inflate(layoutInflater)
+
+        binding.btnBackUserProfile.setOnClickListener{
+            val intent = Intent(this,Home::class.java)
+            startActivity(intent)
+        }
+
+
         setContentView(binding.root)
 
         firebaseAuth = FirebaseAuth.getInstance()

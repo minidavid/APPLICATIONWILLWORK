@@ -1,9 +1,12 @@
 package com.example.applicationwillwork
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.applicationwillwork.Adapters.MyAdapter
 
 class ArticlesMain : AppCompatActivity() {
     private  lateinit var newRecyclerview : RecyclerView
@@ -12,6 +15,8 @@ class ArticlesMain : AppCompatActivity() {
 
     lateinit var imageId : Array<Int>
     lateinit var heading : Array<String>
+
+    lateinit var articles : Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_articles_main)
@@ -24,9 +29,16 @@ class ArticlesMain : AppCompatActivity() {
 
         heading = arrayOf(
             "Mental Health is important",
-            "Here are 12 facts you did not know about mental health",
-            "Mental Health Understood Better"
+            "Mental Health Problems",
+            "Getting to an institution"
         )
+
+        articles = arrayOf(
+            getString(R.string.article_one),
+            getString(R.string.article_two),
+            getString(R.string.article_three)
+        )
+
 
         newRecyclerview = findViewById(R.id.RecyclerViewerMain)
         newRecyclerview.layoutManager = LinearLayoutManager(this)
@@ -44,6 +56,23 @@ class ArticlesMain : AppCompatActivity() {
             newArrayList.add(articles)
 
         }
-        newRecyclerview.adapter = MyAdapter(newArrayList)
+        var adapter = MyAdapter(newArrayList)
+        newRecyclerview.adapter = adapter
+        adapter.setOnItemClickListener(object : MyAdapter.onItemClickListener {
+            override fun onItemClick(position: Int) {
+                Toast.makeText(this@ArticlesMain,"You clicked on: $position",Toast.LENGTH_SHORT).show()
+
+                //intent
+                val intent = Intent(this@ArticlesMain,ArticleActivity::class.java)
+                intent.putExtra("heading",newArrayList[position].heading)
+                intent.putExtra("imageId",newArrayList[position].heading)
+                intent.putExtra("articlesBody",articles[position])
+
+                startActivity(intent)
+
+
+            }
+
+        })
     }
 }

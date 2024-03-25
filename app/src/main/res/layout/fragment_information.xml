@@ -10,15 +10,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/articles_fragment"
+        android:translationX="20dp"
+        android:textSize="32dp"
+        android:text="Mental health information"
         android:layout_gravity="center"/>
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnToArticles"
         android:layout_width="230dp"
         android:layout_height="92dp"
-        android:translationX="00dp"
+        android:translationX="100dp"
         android:translationY="100dp"
-        android:text="Button" />
+        android:text="Articles" />
 
 </FrameLayout>

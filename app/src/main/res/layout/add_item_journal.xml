@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:background="@drawable/shape_background"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingBottom="15dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Journal entry"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="32dp"
+            android:background="#000000"
+            android:padding="30dp"
+            android:layout_gravity="center"
+            />
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+
+            android:background="#000000" />
+
+        <EditText
+            android:id="@+id/txtNewTitleJournal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Title"
+            android:textStyle="italic"
+            android:background="@drawable/shape_background"
+            android:textSize="32dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <EditText
+            android:id="@+id/txtNewSubTitleJournal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Content"
+            android:background="@drawable/shape_background"
+            android:textStyle="italic"
+            android:textSize="32dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
